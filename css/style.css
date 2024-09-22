@@ -8,9 +8,83 @@
   --white: #fff;
   --spaceSection: 80px;
 }
-body {
-  height: 30000px;
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  background-color: #000000e0;
 }
+.loader .image-loader {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  height: 100vh;
+}
+.loader img {
+  width: 200px;
+}
+.loader .spong1 {
+  position: relative;
+  animation-name: animat;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+  margin-left: 4px;
+}
+.loader .spong2 {
+  position: relative;
+  animation-name: animat;
+  animation-duration: 0.5s;
+  animation-delay: .8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+}
+.loader .spong3 {
+  position: relative;
+  animation-name: animat;
+  animation-duration: .5s;
+  animation-delay: .6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+@keyframes animat {
+  0% {
+    top: 0px;
+  }
+  25%{
+    background-color: #8f36ff;
+  }
+  50%{
+    background-color:  #ff0000;
+  }
+  75%{
+    background-color:  #00ff;
+  }
+  100% {
+    top: -80px;
+  }
+}
+@media (max-width: 767px) {
+    .loader img {
+      width: 150px;
+    }
+}
+@media (max-width: 575px) {
+  .loader img {
+    width: 100px;
+  }
+}
+/* end loader */
 .navbar.navbar-expand-lg {
   background-color: var(--white);
   box-shadow: 0.5px 0.5px 5px grey;
@@ -225,18 +299,30 @@ body {
   background-position: 20%;
   height: 600px;
   position: relative;
-  z-index: -2;
+
 }
-.playvid .container {
+.playvid .container .containplayvid {
   width: 55%;
   margin: var(--spaceSection) auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 90%;
+  padding-bottom:40px ;
+
 }
+.playvid .container .containplayvid  video{
+  width: 90%;
+  height: 240px;
+  margin: 0 auto;
+}
+.activeVid{
+  display: none;
+}
+
 .playvid .container h3 {
   color: var(--white);
+  line-height: 1.8;
 }
 .playvid .container button {
   font-weight: 700;
@@ -256,7 +342,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 @media (max-width: 575px) {
   .playvid {
@@ -268,10 +353,10 @@ body {
     position: relative;
     z-index: -2;
   }
-  .playvid .container {
+  .playvid .container .containplayvid {
     width: 100%;
   }
-  .playvid .container button {
+  .playvid .container .containplayvid button {
     width: 122px;
     height: 54px;
     font-size: 14px;
@@ -356,63 +441,209 @@ body {
   }
 }
 /* end family */
-.register{
+.register {
   margin-top: var(--spaceSection);
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   position: relative;
   padding: 20px 0;
 }
-.line{
+.line {
   width: 20%;
   height: 18px;
   border-radius: 0 10px 10px 0;
-  background-color:#00D87D ;
+  background-color: #00d87d;
   position: absolute;
   top: -8px;
 }
-.register h4{
- font-size: 30px;
- font-weight: 500;
- text-align: center;
- padding-top: var(--spaceSection);
+.register h4 {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: var(--spaceSection);
 }
-.register .container{
+.register .container {
   width: 65%;
-  margin:20px auto;
+  margin: 20px auto;
 }
-.register .container span{
+.register .container span {
   color: red;
 }
-.register .container input::placeholder{
-  color:#CFCFCF;
+.register .container input::placeholder {
+  color: #cfcfcf;
 }
-.register .container .form-control{
- height:60px !important;
- margin-bottom: 10px;
-
+.register .container .form-control {
+  height: 60px !important;
+  margin-bottom: 10px;
 }
-.register .container .form-control:focus{
- box-shadow: none;
+.register .container .form-control:focus {
+  box-shadow: none;
 }
-.register .container .form-check-input:focus{
- box-shadow: none;
+.register .container .form-check-input:focus {
+  box-shadow: none;
 }
 .form-check-input:checked {
   background-color: var(--mainColor);
   border-color: var(--lighterMainColor);
 }
-.register .container .form-check-input:focus{
- color: var(--mainColor);
+.register .container .form-check-input:focus {
+  color: var(--mainColor);
 }
-.register .container h5{
-font-size: 15px;
+.register .container h5 {
+  font-size: 15px;
 }
-.register .male{
-margin-right: 20px;
+.register .male {
+  margin-right: 20px;
 }
-.ChildsDate{
+.ChildsDate {
   margin-top: 10px;
 }
-.assessment{
+.assessment {
   margin-top: 10px;
+}
+footer{
+  background-color: #3F00AF;
+}
+footer .container {
+ padding-top: 50px;
+}
+footer .container .row {
+align-items: center;
+}
+footer .locat,
+footer .number,
+footer .email{
+  display: flex;
+  align-items: start;
+}
+footer .locat p,
+footer .number p,
+footer .email p{
+  margin-left: 7px;
+}
+footer .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  gap: 0.5em;
+}
+
+footer .up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+footer .down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+footer .card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+footer .instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+
+footer .card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+footer .twitter {
+  margin-top: 1.5em;
+  margin-left: -.9em;
+  fill: #03A9F4;
+}
+
+footer .card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+footer .github {
+  margin-top: -.6em;
+  margin-left: 1.2em;
+}
+
+footer .card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+} 
+
+footer .discord {
+  margin-top: -.9em;
+  margin-left: -1.2em;
+  fill: #8c9eff;
+}
+
+footer .card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+footer .card1:hover .instagram {
+  fill: white;
+}
+
+footer .card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03A9F4;
+}
+
+footer .card2:hover .twitter {
+  fill: white;
+}
+
+footer .card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+footer .card3:hover .github {
+  fill: white;
+}
+
+footer .card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+
+footer .card4:hover .discord {
+  fill: white;
 }
